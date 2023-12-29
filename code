@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long m, n, i, j, k, q, mat[1001][1001], vec[1001];
+
+bool apare;
+
+int main()
+{
+    
+    cin >> n >> m;
+    
+    for(i = 1; i <= n; i ++)
+    {
+        for(j = 1; j <= m; j ++)
+        {
+            cin >> mat[i][j];
+        }
+    }
+    
+    cin >> k;
+    
+    for(i = 1; i <= k; i ++)
+    {
+        cin >> vec[i];
+    }
+    
+    for(q = 1; q <= k; q ++)
+    {
+        for(i = 1; i <= n; i ++)
+        {
+            apare = false;
+            
+            for(j = 1; j <= m; j ++)
+            {
+                if(vec[q] == mat[i][j])
+                {
+                    apare = true;
+                    break;
+                }
+            }
+            
+            if(apare == false)
+            {
+                break;
+            }
+        }
+        
+        if(apare == true)
+        {
+            cout << "DA" << '\n';
+        }
+        else
+        {
+            cout << "NU" << '\n';
+        }
+    }
+    
+    return 0;
+}
